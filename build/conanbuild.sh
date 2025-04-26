@@ -1,0 +1,1 @@
+. "/root/DengYongjie/BsplineInterpolation/build/conanbuildenv-release-armv8.sh"

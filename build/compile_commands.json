@@ -1,0 +1,57 @@
+[
+{
+  "directory": "/root/DengYongjie/BsplineInterpolation/build",
+  "command": "/usr/bin/c++  -I/root/DengYongjie/BsplineInterpolation/include -I/root/DengYongjie/BsplineInterpolation/src -I/usr/include/ROOT -isystem /root/.conan2/p/eigen3d88c0279cc26/p/include/eigen3 -isystem /root/.conan2/p/b/gsl23eb4a758651d/p/include -isystem /root/.conan2/p/b/qcdnu32c1a22ccb0f1/p/include -O3 -DNDEBUG -std=gnu++17 -o CMakeFiles/bspline.dir/src/BSpline.cc.o -c /root/DengYongjie/BsplineInterpolation/src/BSpline.cc",
+  "file": "/root/DengYongjie/BsplineInterpolation/src/BSpline.cc"
+},
+{
+  "directory": "/root/DengYongjie/BsplineInterpolation/build",
+  "command": "/usr/bin/c++  -I/root/DengYongjie/BsplineInterpolation/include -I/root/DengYongjie/BsplineInterpolation/src -I/usr/include/ROOT -isystem /root/.conan2/p/eigen3d88c0279cc26/p/include/eigen3 -isystem /root/.conan2/p/b/gsl23eb4a758651d/p/include -isystem /root/.conan2/p/b/qcdnu32c1a22ccb0f1/p/include -O3 -DNDEBUG -std=gnu++17 -o CMakeFiles/bspline.dir/src/BSpline_Interpolate.cc.o -c /root/DengYongjie/BsplineInterpolation/src/BSpline_Interpolate.cc",
+  "file": "/root/DengYongjie/BsplineInterpolation/src/BSpline_Interpolate.cc"
+},
+{
+  "directory": "/root/DengYongjie/BsplineInterpolation/build",
+  "command": "/usr/bin/c++  -I/root/DengYongjie/BsplineInterpolation/include -I/root/DengYongjie/BsplineInterpolation/src -I/usr/include/ROOT -isystem /root/.conan2/p/eigen3d88c0279cc26/p/include/eigen3 -isystem /root/.conan2/p/b/gsl23eb4a758651d/p/include -isystem /root/.conan2/p/b/qcdnu32c1a22ccb0f1/p/include -O3 -DNDEBUG -std=gnu++17 -o CMakeFiles/bspline.dir/src/BSpline_Interpolate1D.cc.o -c /root/DengYongjie/BsplineInterpolation/src/BSpline_Interpolate1D.cc",
+  "file": "/root/DengYongjie/BsplineInterpolation/src/BSpline_Interpolate1D.cc"
+},
+{
+  "directory": "/root/DengYongjie/BsplineInterpolation/build",
+  "command": "/usr/bin/c++  -I/root/DengYongjie/BsplineInterpolation/include -I/root/DengYongjie/BsplineInterpolation/src -I/usr/include/ROOT -isystem /root/.conan2/p/eigen3d88c0279cc26/p/include/eigen3 -isystem /root/.conan2/p/b/gsl23eb4a758651d/p/include -isystem /root/.conan2/p/b/qcdnu32c1a22ccb0f1/p/include -O3 -DNDEBUG -std=gnu++17 -o CMakeFiles/bspline.dir/src/BSpline_Interpolate2D.cc.o -c /root/DengYongjie/BsplineInterpolation/src/BSpline_Interpolate2D.cc",
+  "file": "/root/DengYongjie/BsplineInterpolation/src/BSpline_Interpolate2D.cc"
+},
+{
+  "directory": "/root/DengYongjie/BsplineInterpolation/build",
+  "command": "/usr/bin/c++  -I/root/DengYongjie/BsplineInterpolation/include -I/root/DengYongjie/BsplineInterpolation/src -I/usr/include/ROOT -isystem /root/.conan2/p/eigen3d88c0279cc26/p/include/eigen3 -isystem /root/.conan2/p/b/gsl23eb4a758651d/p/include -isystem /root/.conan2/p/b/qcdnu32c1a22ccb0f1/p/include -O3 -DNDEBUG -std=gnu++17 -o CMakeFiles/bspline.dir/src/BSpline_Interpolate3D.cc.o -c /root/DengYongjie/BsplineInterpolation/src/BSpline_Interpolate3D.cc",
+  "file": "/root/DengYongjie/BsplineInterpolation/src/BSpline_Interpolate3D.cc"
+},
+{
+  "directory": "/root/DengYongjie/BsplineInterpolation/build",
+  "command": "/usr/bin/c++  -I/root/DengYongjie/BsplineInterpolation/include -I/root/DengYongjie/BsplineInterpolation/src -I/usr/include/ROOT -isystem /root/.conan2/p/eigen3d88c0279cc26/p/include/eigen3 -isystem /root/.conan2/p/b/gsl23eb4a758651d/p/include -isystem /root/.conan2/p/b/qcdnu32c1a22ccb0f1/p/include -O3 -DNDEBUG -std=gnu++17 -o CMakeFiles/bspline.dir/src/Field-FeynmanModel.cc.o -c /root/DengYongjie/BsplineInterpolation/src/Field-FeynmanModel.cc",
+  "file": "/root/DengYongjie/BsplineInterpolation/src/Field-FeynmanModel.cc"
+},
+{
+  "directory": "/root/DengYongjie/BsplineInterpolation/build",
+  "command": "/usr/bin/c++  -I/root/DengYongjie/BsplineInterpolation/include -I/root/DengYongjie/BsplineInterpolation/src -I/usr/include/ROOT -isystem /root/.conan2/p/eigen3d88c0279cc26/p/include/eigen3 -isystem /root/.conan2/p/b/gsl23eb4a758651d/p/include -isystem /root/.conan2/p/b/qcdnu32c1a22ccb0f1/p/include -O3 -DNDEBUG -std=gnu++17 -o CMakeFiles/bspline.dir/src/QCDNUM_Evolution.cc.o -c /root/DengYongjie/BsplineInterpolation/src/QCDNUM_Evolution.cc",
+  "file": "/root/DengYongjie/BsplineInterpolation/src/QCDNUM_Evolution.cc"
+},
+{
+  "directory": "/root/DengYongjie/BsplineInterpolation/build",
+  "command": "/usr/bin/c++  -I/root/DengYongjie/BsplineInterpolation/include -I/root/DengYongjie/BsplineInterpolation/src -I/usr/include/ROOT -isystem /root/.conan2/p/eigen3d88c0279cc26/p/include/eigen3 -isystem /root/.conan2/p/b/gsl23eb4a758651d/p/include -isystem /root/.conan2/p/b/qcdnu32c1a22ccb0f1/p/include -O3 -DNDEBUG -std=gnu++17 -o CMakeFiles/bspline.dir/src/Tensor.cc.o -c /root/DengYongjie/BsplineInterpolation/src/Tensor.cc",
+  "file": "/root/DengYongjie/BsplineInterpolation/src/Tensor.cc"
+},
+{
+  "directory": "/root/DengYongjie/BsplineInterpolation/build",
+  "command": "/usr/bin/c++  -I/root/DengYongjie/BsplineInterpolation/include -I/root/DengYongjie/BsplineInterpolation/src -I/usr/include/ROOT -isystem /root/.conan2/p/eigen3d88c0279cc26/p/include/eigen3 -isystem /root/.conan2/p/b/gsl23eb4a758651d/p/include -isystem /root/.conan2/p/b/qcdnu32c1a22ccb0f1/p/include -O3 -DNDEBUG -std=gnu++17 -o CMakeFiles/bspline.dir/src/Tools.cc.o -c /root/DengYongjie/BsplineInterpolation/src/Tools.cc",
+  "file": "/root/DengYongjie/BsplineInterpolation/src/Tools.cc"
+},
+{
+  "directory": "/root/DengYongjie/BsplineInterpolation/build",
+  "command": "/usr/bin/c++  -I/usr/include/ROOT -I/root/DengYongjie/BsplineInterpolation/include -I/root/DengYongjie/BsplineInterpolation/src -isystem /root/.conan2/p/eigen3d88c0279cc26/p/include/eigen3 -isystem /root/.conan2/p/b/gsl23eb4a758651d/p/include -isystem /root/.conan2/p/b/qcdnu32c1a22ccb0f1/p/include -O3 -DNDEBUG -std=gnu++17 -o CMakeFiles/bspline_example.dir/examples/example_main.cc.o -c /root/DengYongjie/BsplineInterpolation/examples/example_main.cc",
+  "file": "/root/DengYongjie/BsplineInterpolation/examples/example_main.cc"
+},
+{
+  "directory": "/root/DengYongjie/BsplineInterpolation/build",
+  "command": "/usr/bin/c++  -I/usr/include/ROOT -I/root/DengYongjie/BsplineInterpolation/include -I/root/DengYongjie/BsplineInterpolation/src -isystem /root/.conan2/p/eigen3d88c0279cc26/p/include/eigen3 -isystem /root/.conan2/p/b/gsl23eb4a758651d/p/include -isystem /root/.conan2/p/b/qcdnu32c1a22ccb0f1/p/include -O3 -DNDEBUG -std=gnu++17 -o CMakeFiles/initial_DiFF_z_Mh.dir/tests/initial_DiFF_z_Mh.cc.o -c /root/DengYongjie/BsplineInterpolation/tests/initial_DiFF_z_Mh.cc",
+  "file": "/root/DengYongjie/BsplineInterpolation/tests/initial_DiFF_z_Mh.cc"
+}
+]

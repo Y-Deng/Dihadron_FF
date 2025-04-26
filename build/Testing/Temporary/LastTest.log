@@ -1,0 +1,48 @@
+Start testing: Apr 24 11:16 UTC
+----------------------------------------------------------
+1/1 Testing: initial_DiFF_z_Mh
+1/1 Test: initial_DiFF_z_Mh
+Command: "/root/DengYongjie/BsplineInterpolation/build/bin/tests/initial_DiFF_z_Mh"
+Directory: /root/DengYongjie/BsplineInterpolation/build
+"initial_DiFF_z_Mh" start time: Apr 24 11:16 UTC
+Output:
+----------------------------------------------------------
+  +---------------------------------------------------------------------+   
+  |                                                                     |   
+  |    If you use QCDNUM, please refer to:                              |   
+  |                                                                     |   
+  |    M. Botje, Comput. Phys. Commun. 182(2011)490, arXiV:1005.1481    |   
+  |                                                                     |   
+  +---------------------------------------------------------------------+   
+  
+
+ FILLWT: start fragmentation weight calculations
+ Subgrids    1 Subgrid points  100
+ Pij LO
+ Pij NLO
+ Aij LO
+ Aij NLO
+ FILLWT: weight calculations completed
+
+  
+  
+flavor: -5
+flavor: -4
+flavor: -3
+flavor: -2
+flavor: -1
+flavor: 0
+flavor: 1
+flavor: 2
+flavor: 3
+flavor: 4
+flavor: 5
+<end of output>
+Test time =  47.84 sec
+----------------------------------------------------------
+Test Passed.
+"initial_DiFF_z_Mh" end time: Apr 24 11:17 UTC
+"initial_DiFF_z_Mh" time elapsed: 00:00:47
+----------------------------------------------------------
+
+End testing: Apr 24 11:17 UTC

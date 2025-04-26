@@ -1,0 +1,2 @@
+/usr/bin/ar qc libbspline.a CMakeFiles/bspline.dir/src/BSpline.cc.o CMakeFiles/bspline.dir/src/BSpline_Interpolate.cc.o CMakeFiles/bspline.dir/src/BSpline_Interpolate1D.cc.o CMakeFiles/bspline.dir/src/BSpline_Interpolate2D.cc.o CMakeFiles/bspline.dir/src/BSpline_Interpolate3D.cc.o CMakeFiles/bspline.dir/src/Field-FeynmanModel.cc.o CMakeFiles/bspline.dir/src/QCDNUM_Evolution.cc.o CMakeFiles/bspline.dir/src/Tensor.cc.o CMakeFiles/bspline.dir/src/Tools.cc.o
+/usr/bin/ranlib libbspline.a

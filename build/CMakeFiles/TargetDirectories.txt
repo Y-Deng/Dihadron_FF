@@ -1,3 +1,10 @@
-/home/Field_Feynman_TMD/build/CMakeFiles/MyProject.dir
-/home/Field_Feynman_TMD/build/CMakeFiles/edit_cache.dir
-/home/Field_Feynman_TMD/build/CMakeFiles/rebuild_cache.dir
+/root/DengYongjie/BsplineInterpolation/build/CMakeFiles/bspline.dir
+/root/DengYongjie/BsplineInterpolation/build/CMakeFiles/bspline_example.dir
+/root/DengYongjie/BsplineInterpolation/build/CMakeFiles/initial_DiFF_z_Mh.dir
+/root/DengYongjie/BsplineInterpolation/build/CMakeFiles/test.dir
+/root/DengYongjie/BsplineInterpolation/build/CMakeFiles/edit_cache.dir
+/root/DengYongjie/BsplineInterpolation/build/CMakeFiles/rebuild_cache.dir
+/root/DengYongjie/BsplineInterpolation/build/CMakeFiles/list_install_components.dir
+/root/DengYongjie/BsplineInterpolation/build/CMakeFiles/install.dir
+/root/DengYongjie/BsplineInterpolation/build/CMakeFiles/install/local.dir
+/root/DengYongjie/BsplineInterpolation/build/CMakeFiles/install/strip.dir

@@ -1,1 +1,0 @@
-/usr/bin/c++ CMakeFiles/MyProject.dir/main.cc.o -o ../MyProject   -L/usr/lib/x86_64-linux-gnu  -Wl,-rpath,/usr/lib/x86_64-linux-gnu -lCore -lImt -lRIO -lNet -lHist -lGraf -lGraf3d -lGpad -lROOTVecOps -lTree -lTreePlayer -lRint -lPostscript -lMatrix -lPhysics -lMathCore -lThread -lMultiProc -lROOTDataFrame -lm -ldl -lQCDNUM -lLHAPDF -lgsl -lgslcblas 

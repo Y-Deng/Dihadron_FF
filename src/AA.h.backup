@@ -1,0 +1,183 @@
+#pragma once
+
+#include "../include/BSpline.h"
+#include <algorithm>
+#include <cmath>
+#include <iostream>
+#include <stdexcept>
+#include <vector>
+
+struct BandedMatrix {
+  int n; // 矩阵的维数
+  int r; // 半带宽，即下/上最多偏移 r 位
+  std::vector<std::vector<double>>
+      data; // 每行存储 2r+1 个值，表示压缩后的带状矩阵
+
+  // 构造函数，用于初始化矩阵的维数 n 和半带宽 r，并为 data 分配内存
+  BandedMatrix(int n_, int r_) : n(n_), r(r_) {
+    // 调整 data 的大小为 n 行，每行包含 2r+1 个元素，初始值为 0.0
+    data.resize(n, std::vector<double>(2 * r + 1, 0.0));
+  }
+
+  // 写入元素到带状矩阵中，即设置矩阵 A 的第 i 行第 j 列的值
+  double &at(int i, int j) {
+    // 计算在压缩存储中 (i, j) 元素对应的列索引 k
+    int k = j - i + r;
+    // 检查 k 是否在有效范围内，如果不在则抛出异常
+    if (k < 0 || k >= 2 * r + 1)
+      throw std::out_of_range(
+          "Trying to access a zero element outside the banded matrix range");
+    // 返回 data 中对应位置的引用，以便修改该值
+    return data[i][k];
+  }
+
+  // 读取带状矩阵中的元素值，即获取矩阵 A 的第 i 行第 j 列的值
+  double get(int i, int j) const {
+    // 计算在压缩存储中 (i, j) 元素对应的列索引 k
+    int k = j - i + r;
+    // 检查 k 是否在有效范围内，如果不在则返回 0.0，表示该位置在压缩矩阵中不存在
+    if (k < 0 || k >= 2 * r + 1)
+      return 0.0;
+    // 返回 data 中对应位置的值
+    return data[i][k];
+  }
+};
+
+void solve_banded_system(BandedMatrix A, std::vector<double> b,
+                         std::vector<double> &x_out) {
+  int n = A.n;
+  int r = A.r;
+
+  // Forward elimination
+  for (int i = 0; i < n - 1; ++i) {
+    double pivot = A.at(i, i);
+    if (std::abs(pivot) < 1e-14) {
+      std::cerr << "Zero pivot at row " << i << std::endl;
+      return;
+    }
+
+    int max_j = std::min(r, n - i - 1);
+    for (int j = 1; j <= max_j; ++j) {
+      int row = i + j;
+      double m = A.at(row, i) / pivot;
+      for (int k = -r; k <= r; ++k) {
+        int col = i + k;
+        if (col >= 0 && col < n) {
+          A.at(row, col) -= m * A.get(i, col);
+        }
+      }
+      b[row] -= m * b[i];
+    }
+  }
+
+  // Back substitution
+  x_out.resize(n);
+  for (int i = n - 1; i >= 0; --i) {
+    double sum = b[i];
+    for (int j = 1; j <= r && i + j < n; ++j) {
+      sum -= A.get(i, i + j) * x_out[i + j];
+    }
+    x_out[i] = sum / A.at(i, i);
+  }
+}
+
+// 解 Ax = b，其中 A 是 (n × n) 的带状矩阵，带宽为
+// 2r+1，使用简化版带状高斯消元（无主元交换） A
+// 是输入带状矩阵（拷贝方式传入以允许修改），b 是右端向量，x_out
+// 是解向量（输出）
+void solve_banded_system(BandedMatrix A, std::vector<double> b,
+                         std::vector<double> &x_out) {
+  int n = A.n; // 矩阵大小
+  int r = A.r; // 半带宽（即每行最多影响上下 r 行）
+
+  // ---------------------------
+  // Forward Elimination（前向消元）
+  // ---------------------------
+  // 消元目标：将矩阵 A 化为上三角形式，使得下三角元素为 0
+  for (int i = 0; i < n - 1; ++i) {
+    double pivot = A.at(i, i); // 主元 A(i,i)
+    if (std::abs(pivot) < 1e-14) {
+      std::cerr << "Zero pivot at row " << i << std::endl;
+      return; // 避免除零或发散
+    }
+
+    // 只在带宽范围内进行消元：最多对下 r 行进行处理
+    int max_j = std::min(r, n - i - 1); // j 表示与当前行的相对距离
+    for (int j = 1; j <= max_j; ++j) {
+      int row = i + j;                 // 目标行
+      double m = A.at(row, i) / pivot; // 消元倍数：m = A(row, i) / A(i,i)
+
+      // 对 row 行的所有带宽内元素进行更新
+      for (int k = -r; k <= r; ++k) {
+        int col = i + k; // A(i, col)
+        if (col >= 0 && col < n) {
+          // A(row, col) -= m * A(i, col)
+          A.at(row, col) -= m * A.get(i, col);
+        }
+      }
+
+      // 更新右端向量 b[row] -= m * b[i]
+      b[row] -= m * b[i];
+    }
+  }
+
+  // ---------------------------
+  // Back Substitution（回代）
+  // ---------------------------
+  // 从最后一行开始，反向逐行解出未知数 x_i
+  x_out.resize(n);
+  for (int i = n - 1; i >= 0; --i) {
+    double sum = b[i]; // 初始为 b_i，逐步减去右侧已知项的贡献
+
+    // 仅减去右边带宽内（i+1 到 i+r）未知数的乘积
+    for (int j = 1; j <= r && i + j < n; ++j) {
+      sum -= A.get(i, i + j) * x_out[i + j]; // x_{i+j} 已知，逐步扣除
+    }
+
+    // 解出 x_i
+    x_out[i] = sum / A.at(i, i);
+  }
+}
+
+void build_b_spline_system(const std::vector<double> &x_values,
+                           const std::vector<double> &knots, int degree,
+                           BandedMatrix &A) {
+  int n = x_values.size(); // A: n x n
+
+  for (int i = 0; i < n; ++i) {
+    double x = x_values[i];
+
+    // 只对 x 落入支持区间的基函数填值（最多 p+1 个）
+    for (int j = 0; j < n; ++j) {
+      double val = Bspline_basis(j, degree, x, knots);
+      if (std::abs(val) > 1e-14) {
+        A.at(i, j) = val;
+      }
+    }
+  }
+}
+
+void test() {
+  int n = 10;
+  int degree = 3; // 任意 B 样条次数
+  BandedMatrix A(n, degree);
+  std::vector<double> b(n);
+
+  // 你自己构造 A(i,j) 和 b[i]
+  for (int i = 0; i < n; ++i) {
+    for (int j = std::max(0, i - degree); j <= std::min(n - 1, i + degree);
+         ++j) {
+      A.at(i, j) = (i == j) ? 2.0 : 1.0; // 举例构造五对角
+    }
+    b[i] = i + 1;
+  }
+
+  // 解方程 Ax = b
+  std::vector<double> x;
+  solve_banded_system(A, b, x);
+
+  // 输出结果
+  for (double xi : x)
+    std::cout << xi << " ";
+  std::cout << std::endl;
+}

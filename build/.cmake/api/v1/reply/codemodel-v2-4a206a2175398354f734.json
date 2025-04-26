@@ -1,0 +1,79 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"hasInstallRule" : true,
+					"jsonFile" : "directory-.-release-512706b48f79f37fd9aa.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.16"
+					},
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2
+					]
+				}
+			],
+			"name" : "release",
+			"projects" : 
+			[
+				{
+					"directoryIndexes" : 
+					[
+						0
+					],
+					"name" : "BsplineInterpolation",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 0,
+					"id" : "bspline::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-bspline-release-96fb6ed49755b1c5e330.json",
+					"name" : "bspline",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "bspline_example::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-bspline_example-release-96a1187f33f1fad9f039.json",
+					"name" : "bspline_example",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "initial_DiFF_z_Mh::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-initial_DiFF_z_Mh-release-17d088dea3c9f3a06323.json",
+					"name" : "initial_DiFF_z_Mh",
+					"projectIndex" : 0
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "/root/DengYongjie/BsplineInterpolation/build",
+		"source" : "/root/DengYongjie/BsplineInterpolation"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 3
+	}
+}
